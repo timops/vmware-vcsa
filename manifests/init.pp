@@ -1,6 +1,6 @@
 # Copyright (C) 2013 VMware, Inc.
 # vCSA appliance configuration.
-define vcsa (
+define vmware-vcsa::vcsa (
   $username      = 'root',     #: vcsa appliance username
   $password      = 'vmware',   #: vcsa appliance password
   $server,                     #: vCSA appliance server name or ip address
@@ -91,4 +91,12 @@ define vcsa (
     ensure    => running,
     transport => Transport[$name],
   }
+}
+
+vcsa { 'test':
+  username => 'root',
+  password => 'vmware',
+  server   => '10.127.1.126',
+  db_type  => 'embedded',
+  capacity => 's',
 }
