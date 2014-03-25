@@ -93,10 +93,10 @@ define vmware-vcsa::vcsa (
   }
 }
 
-vcsa { 'test':
+vmware-vcsa::vcsa { 'test':
   username => 'root',
   password => 'vmware',
-  server   => '10.127.1.126',
+  server   => 'vcsa55.vmware.local',
   db_type  => 'embedded',
   capacity => 's',
 }
